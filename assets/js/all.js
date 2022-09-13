@@ -67,7 +67,7 @@ function pagination(jsonData, nowPage) {
 function displayData(data) {
   var str = '';
   data.forEach(function (item) {
-    str += "\n      \n    ";
+    str += "\n        <div class=\"col-md-6 py-2 px-1\"><!--\u5361\u7247\u982D-->\n        <div class=\"card\">\n          <div class=\"card bg-dark text-white text-left\">\n            <img class=\"card-img-top bg-cover\" height=\"200px\" src=\"../assets/images/\u4E09\u6C11\u5340/\u4E2D\u90FD\u5510\u69AE\u78DA\u7AAF\u5EE001.jpg\">\n            <div \n            class=\"\n                    card-img-overlay\n                    d-flex\n                    justify-content-between\n                    align-items-end \n                    p-0\n                    px-3\n                    \"\n            style=\"\n                    background-color:rgba(0, 0, 0, .2)\n                  \"\n            >\n              <h5 class=\"card-img-title-lg\">\u9AD8\u96C4\u9858\u666F\u9928</h5>\n              <h5 class=\"card-img-title-sm\">\u4E09\u6C11\u5340</h5>  \n            </div>\n          </div>\n          <div class=\"card-body text-left\">\n            <p class=\"card-p-text\"><i class=\"far fa-clock fa-clock-time\"></i>&nbsp;\u71DF\u696D\u6642\u9593</p>\n            <p class=\"card-p-text\"><i class=\"fas fa-map-marker-alt fa-map-gps\"></i>&nbsp;\u4F4F\u5740</p>\n            <div class=\"d-flex justify-content-between align-items-end\">\n              <p class=\"card-p-text\"><i class=\"fas fa-mobile-alt fa-mobile\"></i>&nbsp;\u96FB\u8A71</p>\n              <p class=\"card-p-text\"><i class=\"fas fa-tags text-warning\"></i>&nbsp;</p>\n            </div>\n          </div>\n        </div>\n      </div><!--\u5361\u7247\u5C3E-->\n    ";
   });
 }
 //# sourceMappingURL=all.js.map
