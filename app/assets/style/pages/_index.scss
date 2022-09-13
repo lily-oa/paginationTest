@@ -1,0 +1,334 @@
+.bg {
+  background: url('../images/Hero.png'); //不能用 bgi
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 380px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  margin-bottom: 121px;
+
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+}
+
+.logo {
+  margin: 250px 0 40px 0;
+
+  @include media-breakpoint-up(md) {
+    margin: 89px 0 96px 0;
+  }
+
+  a {
+    display: block;
+    color: #fff;
+  }
+}
+
+.select-group {
+  background: rgba(255, 255, 255, 0.7);
+  border: 3px solid #fff;
+  border-radius: 3px;
+  width: 45%;
+  line-height: 21px;
+  padding: 10px 10px;
+  z-index: 1080;
+  margin-bottom: 50px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 79px;
+  }
+}
+
+.tabs-group {
+
+  // padding-bottom: 100px;
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    bottom: -100px; //區塊往下
+  }
+
+  width: 78%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 20px 0 18px 80px;
+
+  @include media-breakpoint-up(md) {
+    padding: 20px 0 18px 26px;
+  }
+}
+
+.tabs-list {
+  display: inline-flex;
+  gap: 12px; //网格行与列之间的间隙
+
+
+  li {
+    white-space: nowrap; //文字以橫向顯示
+
+    &:nth-child(1) a {
+      background-color: $secondary;
+    }
+
+    &:nth-child(2) a {
+      background-color: $third;
+    }
+
+    &:nth-child(3) a {
+      background-color: $four;
+    }
+
+    &:nth-child(4) a {
+      background-color: $primary;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 12px 34px;
+    font-size: $h4-font-size; //20px
+    color: #fff;
+  }
+}
+
+.hr {
+  width: 88%;
+  margin: 0 auto;
+  border-bottom: 1px dashed $primary;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px; //虛線往下
+  pointer-events: none; // 穿透上層的div，點擊下方元素
+
+  a {
+    display: flex;
+    position: absolute;
+    color: $primary;
+    font-size: $h3-font-size;
+    background-color: #fff;
+  }
+
+  @include media-breakpoint-up(md) {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+
+    a {
+      display: flex;
+      position: absolute;
+      color: $primary;
+      font-size: $h3-font-size; //24px
+      background-color: #fff;
+    }
+  }
+}
+
+//-----------------卡片區-----------------
+
+.container {
+  padding: 65px 39px 40px 40px;
+}
+
+.subtitle {
+  color: $secondary;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+}
+
+.card {
+  margin-bottom: 36px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 45.3%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 30.3%;
+  }
+}
+
+.card-header {
+  padding: 0;
+  height: 137px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  padding: 0 22px 14px 22px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 0.5rem;
+
+  h4 {
+    font-size: $h3-font-size; //24px
+  }
+
+  p {
+    white-space: nowrap;
+  }
+}
+
+.card-body {
+  padding: 15px 24px 19px 24px;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &:not(last-child) {
+      margin-bottom: 14px;
+    }
+
+    &:nth-child(1) i {
+      color: $secondary;
+    }
+
+    &:nth-child(2) i {
+      color: $third;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: $h6-font-size; //18px
+      text-align: center;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.card-footer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  & div:nth-child(1) {
+    color: $primary;
+    margin-bottom: 5px;
+  }
+
+  & div:nth-child(2) {
+    color: $four;
+  }
+
+}
+
+.card-footer-item {
+  &[data-display*="d-none"] {
+    //為何要用這樣的寫法
+    display: none;
+  }
+}
+
+//----------------------------分頁設定----------------
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 8px;
+}
+
+//若不是最後一個子節點都需設定邊距向右 8px
+.page-item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.page-link {
+  display: block;
+  font-size: $h7-font-size; //14px
+  color: #4a4a4a;
+  line-height: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none; //無邊框
+
+  &:disabled {
+    pointer-events: none; //滑鼠穿越該元素，點擊到下方的元素
+  }
+
+  &.active{
+    color: #559ac8;  //滑鼠點擊後所呈現的顏色
+  }
+
+  &[data-type="page"] {
+    font-size: $h7-font-size; //14px
+    color: rgba(74, 74, 74, 0.50);
+    pointer-events: none;
+  }
+
+  &.active {
+    &[data-type="page"] {
+      font-size: $h7-font-size; //14px
+      color: #4a4a4a;
+      pointer-events: auto; //被另外一個div遮住，就無法進行點擊或 hover 的動作
+    }
+  }
+}
+
+//------------頁尾---------------------------
+.footer {
+  background-color: $primary;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: $h7-font-size; //14px
+
+  p {
+    color: #ffd366;
+  }
+
+  & p:first-child {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+

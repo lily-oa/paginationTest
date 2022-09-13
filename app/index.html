@@ -1,58 +1,107 @@
 ---
-title: Boostrap Index
+title: myKaohsiung | 高雄旅遊網
 layout: ./app/layout.ejs
 engine: ejs
 current: index
 ---
 
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
+<div class="bg">
+  <h1 class="logo fs-1"><a href="#">高雄旅遊網</a></h1>
+  <select class="select-group fs-md-5" name="select district" id="select-district">
+    <option selected disabled class="fs-7">-- 請選擇行政區 --</option>
+    <option value="苓雅區">苓雅區</option>
+    <option value="三民區">三民區</option>
+    <option value="新興區">新興區</option>
+  </select>
+  <div class="tabs-group">
+    <h3 class="tabs-title fs-5 mb-4">熱門行政區</h3>
+    <ul class="tabs-list flex-column flex-md-row justify-content-md-between">
+      <li><a href="#" data-type="tab" data-district="苓雅區">苓雅區</a></li>
+      <li><a href="#" data-type="tab" data-district="三民區">三民區</a></li>
+      <li><a href="#" data-type="tab" data-district="美濃區">美濃區</a></li>
+      <li><a href="#" data-type="tab" data-district="小港區">小港區</a></li>
+    </ul>
   </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+<!--下虛線-->
+<div class="hr">
+  <a href="#district-result">
+    <!--為了連接卡片區-->
+    <i class="fas fa-chevron-circle-down"></i>
+  </a>
 </div>
+
+<!-- 第二塊卡片區 -->
+<div class="container" id="district-result">
+  <h2 class="subtitle fs-2">三民區</h2>
+  <ul class="card-list" data-aos="fade" data-aos-duration="2000">
+    <li class="card">
+      <div class="card-header" style="background-image:url('./assets/images/三民區/中都濕地公園07.jpg')" data-picture="url">
+        <div class="card-title">
+          <h4 data-name="高雄願景館">高雄願景館</h4>
+          <p data-district="三民區">三民區</p>
+        </div>
+      </div>
+      <ul class="card-body">
+        <li>
+          <i class="fas fa-clock"></i>
+          <p data-opentime="">週二至週日10:00-18:00，每週一公休</p>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <p data-add="">高雄市三民區建國二路318號</p>
+        </li>
+        <li class="card-footer-list d-flex flex-lg-column justify-content-lg-start align-items-lg-start">
+          <div class="card-footer-item" data-charge="free">
+            <i class="fas fa-mobile-alt"></i>
+            <p data-tel="" class="text-dark">886-7-2363357</p>
+          </div>
+          <div class="card-footer-item">
+            <i class="fas fa-tag"></i>
+            <p data-ticketInfo="" class="text-dark">免費入園</p>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <!--分頁-->
+  <ul class="pagination-list">
+    <li class="page-item">
+      <a href="#" class="page-link" data-type="page" data-page="pre">
+        <i class="fas fa-angle-left"></i>
+        prev
+      </a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link active" data-num="num">1</a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link" data-num="num">2</a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link" data-num="num">3</a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link" data-num="num">4</a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link" data-num="num">5</a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link" data-type="page" data-page="next">
+        <i class="fas fa-angle-right"></i>
+        next
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 頁尾 -->
+<div class="footer">
+  <p><a href="#">高雄旅遊網</a></p>
+  <p>資料來源 : 高雄市政府</p>
+</div>
+
+
+
