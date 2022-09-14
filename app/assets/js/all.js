@@ -73,10 +73,10 @@ function displayData(data){
   let str = '';
   data.forEach((item) => {
     str += `
-        <div class="col-md-6 py-2 px-1"><!--卡片頭-->
+        <div class="col-md-6 py-2 px-1">
         <div class="card">
           <div class="card bg-dark text-white text-left">
-            <img class="card-img-top bg-cover" height="200px" src="../assets/images/三民區/中都唐榮磚窯廠01.jpg">
+            <img class="card-img-top bg-cover" height="200px" src="${item.Picture1}">
             <div 
             class="
                     card-img-overlay
@@ -90,20 +90,21 @@ function displayData(data){
                     background-color:rgba(0, 0, 0, .2)
                   "
             >
-              <h5 class="card-img-title-lg">高雄願景館</h5>
-              <h5 class="card-img-title-sm">三民區</h5>  
+              <h5 class="card-img-title-lg">${item.Name}</h5>
+              <h5 class="card-img-title-sm">${item.Zone}</h5>  
             </div>
           </div>
           <div class="card-body text-left">
-            <p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;營業時間</p>
-            <p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;住址</p>
+            <p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;${item.Opentime}</p>
+            <p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;${item.Add}</p>
             <div class="d-flex justify-content-between align-items-end">
-              <p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;電話</p>
-              <p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;</p>
+              <p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;${item.Tel}</p>
+              <p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;${item.Ticketinfo}</p>
             </div>
           </div>
         </div>
-      </div><!--卡片尾-->
+      </div>
     `;
   });
+  content.innerHTML = str;
 }
