@@ -60,7 +60,8 @@ function pagination(jsonData, nowPage) {
     hasNext: currentPage < pageTotal
   }; // console.log(page);
 
-  displayData(data); //pageBtn(page);
+  displayData(data);
+  pageBtn(page);
 }
 
 function displayData(data) {
@@ -75,7 +76,7 @@ function pageBtn(page) {
   var str = '';
   var total = page.pageTotal;
 
-  if (page.haspage) {
+  if (page.hasPage) {
     str += "\n    <li class=\"page-item\"><a class='page-link' href='#' data-page=\"".concat(Number(page.currentPage) - 1, ">Previous</a></li>");
   } else {
     str += "<li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li>";
@@ -92,7 +93,24 @@ function pageBtn(page) {
   ;
 
   if (page.hasNext) {
-    str += "";
+    str += "<li class=\"page-item\"><a class='page-link' href='#' data-page=\"".concat(Number(page.currentPage) + 1, ">Next</a></li>");
+  } else {
+    str += "<li class=\"page-item disabled\"><span class=\"page-link\">Next</span></li>";
   }
+
+  pageid.innerHTML = str;
 }
+
+function switchPage(e) {
+  e.preventDefault();
+
+  if (e.target.nodeName !== 'A') {
+    return;
+  }
+
+  var page = e.target.dataset.page;
+  pagination(jsonData, page);
+}
+
+pageid.addEventListener('click', switchPage);
 //# sourceMappingURL=all.js.map
