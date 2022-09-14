@@ -5,7 +5,7 @@ let jsonData = {};
 
 function getData(){
   axios.get(jsonUrl)
-    .then(function(response){
+    .then((response) => {
     jsonData = response.data.result.records;
     console.log(jsonData);
     pagination(jsonData, 1);
@@ -103,8 +103,7 @@ function displayData(data){
             </div>
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
   });
   content.innerHTML = str;
 }
