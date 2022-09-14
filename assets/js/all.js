@@ -1,7 +1,7 @@
 "use strict";
 
-var jsonUrl = 'https://raw.githubusercontent.com/hsiangfeng/JSHomeWork/master/JSON/datastore_search.json';
-var content = document.querySelector('.content');
+var jsonUrl = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
+var content = document.getElementById('content');
 var pageid = document.getElementById('pageid');
 var jsonData = {};
 
