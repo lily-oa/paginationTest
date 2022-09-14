@@ -7,8 +7,8 @@ var jsonData = {};
 
 function getData() {
   axios.get(jsonUrl).then(function (response) {
-    jsonData = response.data.result.records; //console.log(jsonData);
-
+    jsonData = response.data.result.records;
+    console.log(jsonData);
     pagination(jsonData, 1);
   });
 }
@@ -60,8 +60,7 @@ function pagination(jsonData, nowPage) {
     hasNext: currentPage < pageTotal
   }; // console.log(page);
 
-  displayData(data);
-  pageBtn(page);
+  displayData(data); //pageBtn(page);
 }
 
 function displayData(data) {
