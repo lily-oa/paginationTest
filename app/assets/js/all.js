@@ -39,7 +39,7 @@ function pagination(jsonData, nowPage){
     currentPage = pageTotal;
   }
   
-  // 由前面可知最小數字為6，所以用答案來回推式
+  // 由前面可知最小數字為6，所以用答案來回推公式
   const minData = (currentPage * perpage) - perpage + 1;
   const maxData = (currentPage * perpage);
   
@@ -106,4 +106,28 @@ function displayData(data){
       </div>`;
   });
   content.innerHTML = str;
+}
+
+function pageBtn(page){
+  let str = '';
+  const total = page.pageTotal;
+  
+  if(page.haspage){
+    str += `
+    <li class="page-item"><a class='page-link' href='#' data-page="${Number(page.currentPage)-1}>Previous</a></li>`;
+  }else{
+    str += `<li class="page-item disabled"><span class="page-link">Previous</span></li>`;
+  }
+
+  for(let i=1; i<=total; i++){
+    if(Number(page.currentPage)===i){
+      str += `<li class="page-item active"><a class='page-link' href='#' data-page="${i}">${i}</a></li>`;
+    }else{
+      str += `<li class="page-item"><a class='page-link' href='#' data-page="${i}">${i}</a></li>`;
+    }
+  };
+
+  if(page.hasNext){
+    str += ``
+  }
 }
