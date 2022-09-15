@@ -1,7 +1,7 @@
 const jsonUrl ='https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
 const content = document.getElementById('content');
 const pageid = document.getElementById('pageid');
-let jsonData = {};
+let jsonData = [];
 
 function getData(){
   axios.get(jsonUrl)
