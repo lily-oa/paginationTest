@@ -1,7 +1,7 @@
 "use strict";
 
 var jsonUrl = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
-var content = document.querySelector('.content');
+var content = document.getElementById('content');
 var pageid = document.getElementById('pageid');
 var jsonData = {};
 
@@ -77,7 +77,7 @@ function pageBtn(page) {
   var total = page.pageTotal;
 
   if (page.hasPage) {
-    str += "\n    <li class=\"page-item\"><a class='page-link' href='#' data-page=\"".concat(Number(page.currentPage) - 1, ">Previous</a></li>");
+    str += "<li class=\"page-item\"><a class='page-link' href='#' data-page=\"".concat(Number(page.currentPage) - 1, ">Previous</a></li>");
   } else {
     str += "<li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li>";
   }
