@@ -7,7 +7,7 @@ function getData(){
   axios.get(jsonUrl)
     .then((response) => {
     jsonData = response.data.result.records;
-    console.log(jsonData);
+    // console.log(jsonData);
     pagination(jsonData, 1);
   });
 }
@@ -22,6 +22,7 @@ function pagination(jsonData, nowPage){
   // 設定要顯示在畫面上的資料數量
   // 預設每一頁只顯示5筆資料
   const perpage = 5;
+  //console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆`);
   
   // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
   // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
