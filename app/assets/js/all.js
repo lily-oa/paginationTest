@@ -1,7 +1,7 @@
 const jsonUrl ='https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
 const content = document.getElementById('content');
 const pageid = document.getElementById('pageid');
-let jsonData = [];
+let jsonData = {};  //這邊不管是用陣列[]或是用物件{}都可以
 
 function getData(){
   axios.get(jsonUrl)
