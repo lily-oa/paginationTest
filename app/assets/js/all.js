@@ -1,5 +1,5 @@
 const jsonUrl ='https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
-const content = document.querySelector('.content');
+const content = document.getElementById('content');
 const pageid = document.getElementById('pageid');
 let jsonData = {};
 
@@ -113,8 +113,7 @@ function pageBtn(page){
   const total = page.pageTotal;
   
   if(page.hasPage){
-    str += `
-    <li class="page-item"><a class='page-link' href='#' data-page="${Number(page.currentPage)-1}>Previous</a></li>`;
+    str += `<li class="page-item"><a class='page-link' href='#' data-page="${Number(page.currentPage)-1}>Previous</a></li>`;
   }else{
     str += `<li class="page-item disabled"><span class="page-link">Previous</span></li>`;
   }
@@ -126,6 +125,7 @@ function pageBtn(page){
       str += `<li class="page-item"><a class='page-link' href='#' data-page="${i}">${i}</a></li>`;
     }
   };
+  
 
   if(page.hasNext){
     str += `<li class="page-item"><a class='page-link' href='#' data-page="${Number(page.currentPage)+1}>Next</a></li>`;
