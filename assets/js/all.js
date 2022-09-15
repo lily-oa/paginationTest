@@ -3,12 +3,12 @@
 var jsonUrl = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
 var content = document.getElementById('content');
 var pageid = document.getElementById('pageid');
-var jsonData = [];
+var jsonData = {}; //這邊不管是用陣列[]或是用物件{}都可以
 
 function getData() {
   axios.get(jsonUrl).then(function (response) {
-    jsonData = response.data.result.records;
-    console.log(jsonData);
+    jsonData = response.data.result.records; // console.log(jsonData);
+
     pagination(jsonData, 1);
   });
 }
@@ -22,7 +22,8 @@ function pagination(jsonData, nowPage) {
   // 設定要顯示在畫面上的資料數量
   // 預設每一頁只顯示5筆資料
 
-  var perpage = 5; // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
+  var perpage = 5; //console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆`);
+  // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
   // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
 
   var pageTotal = Math.ceil(dataTotal / perpage); // 當前頁數，對應現在當前頁數
