@@ -26,7 +26,8 @@ function pagination(jsonData, nowPage) {
   // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
   // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
 
-  var pageTotal = Math.ceil(dataTotal / perpage); // 當前頁數，對應現在當前頁數
+  var pageTotal = Math.ceil(dataTotal / perpage);
+  console.log("\u5168\u90E8\u8CC7\u6599:".concat(dataTotal, " \u6BCF\u4E00\u9801\u986F\u793A:").concat(perpage, "\u7B46 \u7E3D\u9801\u6578").concat(pageTotal)); // 當前頁數，對應現在當前頁數
 
   var currentPage = nowPage; // 因為要避免當前頁數筆總頁數還要多，假設今天總頁數是 3 筆，就不可能是 4 或 5
   // 所以要在寫入一個判斷避免這種狀況。
