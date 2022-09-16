@@ -58,6 +58,7 @@ function pagination(jsonData, nowPage){
     }
   });
   
+  //因為要將分頁相關資訊傳到另一個 function做處理，所以將page相關所需要的東西改用物件傳遞。
   // 用物件方式傳遞資料
   const page = {
     pageTotal,
@@ -70,6 +71,7 @@ function pagination(jsonData, nowPage){
   pageBtn(page);
 }
 
+// 將卡片資料渲染到頁面上
 function displayData(data){
   let str = '';
   data.forEach((item) => {
