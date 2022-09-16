@@ -53,7 +53,8 @@ function pagination(jsonData, nowPage) {
     if (num >= minData && num <= maxData) {
       data.push(item);
     }
-  }); // 用物件方式傳遞資料
+  }); //因為要將分頁相關資訊傳到另一個 function做處理，所以將page相關所需要的東西改用物件傳遞。
+  // 用物件方式傳遞資料
 
   var page = {
     pageTotal: pageTotal,
@@ -64,7 +65,8 @@ function pagination(jsonData, nowPage) {
 
   displayData(data);
   pageBtn(page);
-}
+} // 將卡片資料渲染到頁面上
+
 
 function displayData(data) {
   var str = '';
