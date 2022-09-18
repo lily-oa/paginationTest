@@ -14,7 +14,7 @@ function getData(){
 getData();
 
 function pagination(jsonData, nowPage){
-  console.log(nowPage);
+  //console.log(nowPage);
   // 取得全部資料長度
   const dataTotal = jsonData.length;
   //console.log(dataTotal);
@@ -28,6 +28,7 @@ function pagination(jsonData, nowPage){
   // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
   const pageTotal = Math.ceil(dataTotal / perpage);
   console.log(`全部資料:${dataTotal} 每一頁顯示:${perpage}筆 總頁數${pageTotal}`);
+
   // 當前頁數，對應現在當前頁數
   let currentPage = nowPage;
   
@@ -113,7 +114,7 @@ function displayData(data){
 
 function pageBtn(page){
   let str = '';
-  const total = page.pageTotal;
+  const total = page.pageTotal;  //每頁所顯示的總筆數
   
   if(page.hasPage){
     str += `<li class="page-item"><a class='page-link' href='#' data-page="${Number(page.currentPage)-1}">Previous</a></li>`;
