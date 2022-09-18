@@ -16,8 +16,8 @@ function getData() {
 getData();
 
 function pagination(jsonData, nowPage) {
-  console.log(nowPage); // 取得全部資料長度
-
+  //console.log(nowPage);
+  // 取得全部資料長度
   var dataTotal = jsonData.length; //console.log(dataTotal);
   // 設定要顯示在畫面上的資料數量
   // 預設每一頁只顯示5筆資料
@@ -78,7 +78,7 @@ function displayData(data) {
 
 function pageBtn(page) {
   var str = '';
-  var total = page.pageTotal;
+  var total = page.pageTotal; //每頁所顯示的總筆數
 
   if (page.hasPage) {
     str += "<li class=\"page-item\"><a class='page-link' href='#' data-page=\"".concat(Number(page.currentPage) - 1, "\">Previous</a></li>");
